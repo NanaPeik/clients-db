@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Clients</string>
+    <string name="id">Id</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="company">Company</string>
+    <string name="created_date">Created</string>
+    <string name="status">Status</string>
+    <string name="phone">Phone</string>
+    <string name="mobile">Mobile</string>
+    <string name="email">Email</string>
+    <string name="search">Search</string>
+</resources>
