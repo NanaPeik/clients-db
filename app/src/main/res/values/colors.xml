@@ -4,4 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="selected_sort_parameter_color">#ADFFC9C9</color>
     <color name="transpatent">#00FFFFFF</color>
+    <color name="purplish_blue">#D004F3</color>
 </resources>

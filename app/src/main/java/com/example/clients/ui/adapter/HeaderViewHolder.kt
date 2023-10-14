@@ -63,6 +63,7 @@ class HeaderViewHolder(
     }
 
     private fun setDefaultDrawable(view: TextView) {
+        view.setBackgroundColor(context.getColor(R.color.transpatent))
         view.setCompoundDrawablesRelativeWithIntrinsicBounds(
             null, null,
             AppCompatResources.getDrawable(context, R.drawable.sort_ic), null
@@ -76,47 +77,38 @@ class HeaderViewHolder(
 
             when (selectedParameterType) {
                 PropertyEnum.ID -> {
-                    binding.id.setBackgroundColor(context.getColor(R.color.transpatent))
                     setDefaultDrawable(binding.id)
                 }
 
                 PropertyEnum.FIRST_NAME -> {
-                    binding.firstName.setBackgroundColor(context.getColor(R.color.transpatent))
                     setDefaultDrawable(binding.firstName)
                 }
 
                 PropertyEnum.LAST_NAME -> {
-                    binding.lastName.setBackgroundColor(context.getColor(R.color.transpatent))
                     setDefaultDrawable(binding.lastName)
                 }
 
                 PropertyEnum.COMPANY -> {
-                    binding.company.setBackgroundColor(context.getColor(R.color.transpatent))
                     setDefaultDrawable(binding.company)
                 }
 
                 PropertyEnum.CREATED_DATA -> {
-                    binding.createdDate.setBackgroundColor(context.getColor(R.color.transpatent))
                     setDefaultDrawable(binding.createdDate)
                 }
 
                 PropertyEnum.STATUS -> {
-                    binding.status.setBackgroundColor(context.getColor(R.color.transpatent))
                     setDefaultDrawable(binding.status)
                 }
 
                 PropertyEnum.PHONE -> {
-                    binding.phone.setBackgroundColor(context.getColor(R.color.transpatent))
                     setDefaultDrawable(binding.phone)
                 }
 
                 PropertyEnum.MOBILE -> {
-                    binding.mobile.setBackgroundColor(context.getColor(R.color.transpatent))
                     setDefaultDrawable(binding.mobile)
                 }
 
                 PropertyEnum.EMAIL -> {
-                    binding.email.setBackgroundColor(context.getColor(R.color.transpatent))
                     setDefaultDrawable(binding.email)
                 }
 

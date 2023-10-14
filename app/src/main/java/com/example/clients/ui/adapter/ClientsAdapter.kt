@@ -13,6 +13,7 @@ import com.example.clients.databinding.ClientSearchItemBinding
 import com.example.clients.ui.PropertyEnum
 
 class ClientsAdapter(
+    private var text: String = "",
     private val context: Context,
     private val filterWithProperty: (PropertyEnum) -> Unit,
     private val search: (String) -> Unit
@@ -60,8 +61,14 @@ class ClientsAdapter(
         when (holder) {
             is SearchViewHolder -> holder.bind(search)
             is HeaderViewHolder -> holder.bind()
-            is ViewHolder -> holder.bind(getItem(position))
+            is ViewHolder -> holder.bind(getItem(position), text, context)
         }
+
+    }
+
+    fun setSearchText(text: String) {
+        this.text = text.lowercase()
+        notifyItemRangeChanged(1, itemCount)
     }
 
     override fun getItemViewType(position: Int): Int {

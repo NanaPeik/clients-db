@@ -89,7 +89,7 @@ class ClientsViewModel @Inject constructor(private val clientsRepository: Client
         viewModelScope.launch {
             val list = mutableListOf<Data>()
             clientsList.firstOrNull()?.forEach { data ->
-                if (data.contains(searchText)) {
+                if (data.contains(searchText.lowercase())) {
                     list.add(data)
                 }
             }

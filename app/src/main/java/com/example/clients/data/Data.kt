@@ -1,5 +1,6 @@
 package com.example.clients.data
 
+import com.example.clients.ui.PropertyEnum
 import java.util.Date
 
 data class Data(
@@ -12,9 +13,36 @@ data class Data(
     val mobilePhone: String? = "",
     val status: String = "",
     val clientOrganisation: ClientOrganisation = ClientOrganisation("", "")
-)
+) {
+    fun getPropertyType(searchText: String): Pair<PropertyEnum, String> {
+        return if (id.contains(searchText)) {
+            Pair(PropertyEnum.ID, id)
+        } else if (firstName.contains(searchText)) {
+            Pair(PropertyEnum.FIRST_NAME, firstName)
+        } else if (lastName.contains(searchText)) {
+            Pair(PropertyEnum.LAST_NAME, lastName)
+        } else if (fixedLinePhone.contains(searchText)) {
+            Pair(PropertyEnum.PHONE, fixedLinePhone)
+        } else if (mobilePhone?.contains(searchText) == true) {
+            Pair(PropertyEnum.MOBILE, mobilePhone)
+        } else if (clientOrganisation.name.contains(searchText)) {
+            Pair(PropertyEnum.COMPANY, clientOrganisation.name)
+        } else if (email?.contains(searchText) == true) {
+            Pair(PropertyEnum.EMAIL, email)
+        } else if (status.contains(searchText)) {
+            Pair(PropertyEnum.STATUS, status)
+        } else {
+            Pair(PropertyEnum.NA, "")
+        }
+    }
+}
 
-fun Data.contains(searchText: String) = id.contains(searchText) || firstName.contains(searchText)
-        || lastName.contains(searchText) || fixedLinePhone.contains(searchText)
-        || mobilePhone?.contains(searchText) == true || clientOrganisation.name.contains(searchText)
-        || email?.contains(searchText) == true || status.contains(searchText)
+
+fun Data.contains(searchText: String) =
+    id.contains(searchText) || firstName.lowercase().contains(searchText)
+            || lastName.lowercase().contains(searchText) || fixedLinePhone.lowercase()
+        .contains(searchText)
+            || mobilePhone?.lowercase()
+        ?.contains(searchText) == true || clientOrganisation.name.lowercase().contains(searchText)
+            || email?.lowercase()?.contains(searchText) == true || status.lowercase()
+        .contains(searchText)

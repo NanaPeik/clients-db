@@ -31,10 +31,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setAdapter() {
-
-        clientsAdapter = ClientsAdapter(this, { property: PropertyEnum ->
+        var text: String
+        clientsAdapter = ClientsAdapter("", this, { property: PropertyEnum ->
+            text = ""
             clientsViewModel.filterByProperty(property)
-        }) { searchText: String -> clientsViewModel.searchByProperty(searchText) }
+        }) { searchText: String ->
+            text = searchText
+            clientsAdapter.setSearchText(text)
+            clientsViewModel.searchByProperty(searchText)
+        }
 
         binding.clientsRv.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         binding.clientsRv.adapter = clientsAdapter
