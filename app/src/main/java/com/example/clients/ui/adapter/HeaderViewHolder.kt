@@ -20,6 +20,15 @@ class HeaderViewHolder(
     private var ascending = true
 
     fun bind() {
+        setDefaultDrawable(binding.email)
+        setDefaultDrawable(binding.mobile)
+        setDefaultDrawable(binding.phone)
+        setDefaultDrawable(binding.status)
+        setDefaultDrawable(binding.createdDate)
+        setDefaultDrawable(binding.company)
+        setDefaultDrawable(binding.lastName)
+        setDefaultDrawable(binding.firstName)
+        setDefaultDrawable(binding.id)
         binding.id.setOnClickListener {
             onPropertySelected(PropertyEnum.ID, binding.id)
         }
