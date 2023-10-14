@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
+    <color name="black_7_transparent">#11000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="selected_sort_parameter_color">#ADFFC9C9</color>
     <color name="transpatent">#00FFFFFF</color>
